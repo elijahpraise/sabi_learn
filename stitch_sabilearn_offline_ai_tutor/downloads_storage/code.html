@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SabiLearn - Manage Downloads</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-background": "#191c1b",
+                        "on-error": "#ffffff",
+                        "secondary": "#8b5000",
+                        "surface-container-highest": "#e1e3e1",
+                        "on-secondary-container": "#653900",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d8dad9",
+                        "on-surface": "#191c1b",
+                        "on-primary-fixed": "#002204",
+                        "secondary-container": "#ff9800",
+                        "on-tertiary-fixed-variant": "#004786",
+                        "on-secondary-fixed": "#2c1600",
+                        "surface-tint": "#1b6d24",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#00569f",
+                        "outline": "#707a6c",
+                        "background": "#f8faf8",
+                        "on-error-container": "#93000a",
+                        "surface": "#f8faf8",
+                        "tertiary-fixed-dim": "#a5c8ff",
+                        "on-primary-fixed-variant": "#005312",
+                        "on-primary": "#ffffff",
+                        "primary": "#0d631b",
+                        "surface-container-low": "#f2f4f2",
+                        "tertiary-fixed": "#d4e3ff",
+                        "inverse-surface": "#2e3130",
+                        "primary-fixed": "#a3f69c",
+                        "on-tertiary-container": "#ebf1ff",
+                        "inverse-primary": "#88d982",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#ffb870",
+                        "surface-variant": "#e1e3e1",
+                        "surface-bright": "#f8faf8",
+                        "secondary-fixed": "#ffdcbe",
+                        "on-surface-variant": "#40493d",
+                        "primary-container": "#2e7d32",
+                        "on-tertiary-fixed": "#001c3a",
+                        "primary-fixed-dim": "#88d982",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#006eca",
+                        "outline-variant": "#bfcaba",
+                        "on-primary-container": "#cbffc2",
+                        "surface-container-high": "#e6e9e7",
+                        "inverse-on-surface": "#eff1ef",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#693c00",
+                        "surface-container": "#eceeec"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        headline: ["Plus Jakarta Sans"],
+                        body: ["Inter"],
+                        label: ["Inter"]
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8faf8; color: #191c1b; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .icon-filled { font-variation-settings: 'FILL' 1; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-24 md:pb-0 pt-20">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface_dim/80 backdrop-blur-md shadow-sm shadow-green-900/5 flex justify-between items-center px-6 py-4 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-lg overflow-hidden relative">
+<img alt="Student Profile" class="w-full h-full object-cover" data-alt="close up of a smiling young student looking confident against a plain light background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBREBKtwnI-N2aTfvOJmNkQ_xwzdb9IrJyEGHGa5N8CteRYpCNN3hiLWkK7F0ZHt2WwEeXjaa7HI-raik8AN_LpStruDwcPhPbScOednxeFuEyUNxtPrtMlnl3J49KnJ7z0W-CXETK4kC2lriR74JPa3D8oIDEgfz7pX_ra1yV-95fxFZGMrm9FRqbEf24uiifYkPx5app-yxvdTBZvwiTmxoQsG8WJ87yvudIEsTYoV_m3B3eyKbNL1Voc4prDHOY5t8PPyZAlQjOi"/>
+</div>
+<span class="font-['Plus_Jakarta_Sans'] text-xl font-extrabold text-green-800 dark:text-green-200 tracking-tight">SabiLearn</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low/50 transition-colors text-green-700 dark:text-green-400 active:scale-95 duration-200">
+<span class="material-symbols-outlined">cloud_off</span>
+</button>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+<!-- Header & Storage Overview -->
+<section class="space-y-6">
+<div>
+<h1 class="text-3xl font-bold font-headline text-on-surface tracking-tight">Content Packs</h1>
+<p class="text-on-surface-variant mt-2 text-lg">Manage your downloaded courses for offline access.</p>
+</div>
+<!-- Storage Bar Card -->
+<div class="bg-surface-container-lowest rounded-lg p-6 shadow-[0_12px_32px_-4px_rgba(27,109,36,0.08)]">
+<div class="flex justify-between items-end mb-4">
+<div>
+<h2 class="text-lg font-semibold font-headline text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">sd_storage</span> Device Storage
+                        </h2>
+<p class="text-sm text-on-surface-variant mt-1">SabiLearn is using 4.2 GB</p>
+</div>
+<div class="text-right">
+<span class="text-2xl font-bold text-on-surface font-headline">4.2 GB</span>
+<span class="text-sm text-on-surface-variant"> / 64 GB</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-4 bg-surface-container-high rounded-full overflow-hidden flex">
+<div class="bg-primary h-full transition-all duration-300 ease-out" style="width: 15%"></div>
+<div class="bg-tertiary h-full transition-all duration-300 ease-out" style="width: 6%"></div>
+<div class="bg-secondary-container h-full transition-all duration-300 ease-out" style="width: 79%"></div>
+</div>
+<div class="flex flex-wrap gap-4 mt-4 text-sm font-medium">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-primary block"></span>
+<span class="text-on-surface">Downloaded (4.2 GB)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-tertiary block"></span>
+<span class="text-on-surface">Other Apps (18 GB)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-secondary-container block"></span>
+<span class="text-on-surface">Free Space (41.8 GB)</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Downloaded Packs (Manage/Delete) -->
+<section class="space-y-4">
+<h3 class="text-xl font-semibold font-headline text-on-surface mb-4">Ready Offline</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Pack Card 1 (Downloaded) -->
+<div class="bg-surface-container-lowest rounded-lg p-5 shadow-[0_12px_32px_-4px_rgba(27,109,36,0.08)] flex flex-col justify-between border-l-4 border-primary">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined icon-filled">functions</span>
+</div>
+<div>
+<h4 class="font-semibold text-on-surface font-headline">Advanced Mathematics</h4>
+<p class="text-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">folder_zip</span> 1.2 GB
+                                </p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary icon-filled" title="Downloaded">check_circle</span>
+</div>
+<div class="flex justify-between items-center mt-2 pt-4 border-t border-surface-dim/30">
+<span class="text-xs text-on-surface-variant">Last accessed: 2 days ago</span>
+<button class="text-error hover:bg-error-container/50 px-3 py-1.5 rounded-full text-sm font-medium transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">delete</span> Remove
+                        </button>
+</div>
+</div>
+<!-- Pack Card 2 (Downloaded) -->
+<div class="bg-surface-container-lowest rounded-lg p-5 shadow-[0_12px_32px_-4px_rgba(27,109,36,0.08)] flex flex-col justify-between border-l-4 border-primary">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-tertiary-container text-on-tertiary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined icon-filled">biotech</span>
+</div>
+<div>
+<h4 class="font-semibold text-on-surface font-headline">Biology 101: Cells</h4>
+<p class="text-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">folder_zip</span> 3.0 GB
+                                </p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary icon-filled" title="Downloaded">check_circle</span>
+</div>
+<div class="flex justify-between items-center mt-2 pt-4 border-t border-surface-dim/30">
+<span class="text-xs text-on-surface-variant">Last accessed: Today</span>
+<button class="text-error hover:bg-error-container/50 px-3 py-1.5 rounded-full text-sm font-medium transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">delete</span> Remove
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Available for Download -->
+<section class="space-y-4 pt-6">
+<h3 class="text-xl font-semibold font-headline text-on-surface mb-4">Available for Download</h3>
+<div class="flex flex-col gap-4">
+<!-- Pack Row 1 -->
+<div class="bg-surface-container-low rounded-lg p-4 flex items-center justify-between hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-dim text-on-surface-variant rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">history_edu</span>
+</div>
+<div>
+<h4 class="font-medium text-on-surface">World History: Modern Era</h4>
+<p class="text-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">cloud_download</span> 850 MB • 12 Modules
+                            </p>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+<!-- Pack Row 2 -->
+<div class="bg-surface-container-low rounded-lg p-4 flex items-center justify-between hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-dim text-on-surface-variant rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">language</span>
+</div>
+<div>
+<h4 class="font-medium text-on-surface">English Literature: Classics</h4>
+<p class="text-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">cloud_download</span> 420 MB • 8 Modules
+                            </p>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+<!-- Pack Row 3 (Downloading State) -->
+<div class="bg-surface-container-low rounded-lg p-4 flex flex-col gap-3 relative overflow-hidden">
+<div class="absolute bottom-0 left-0 h-1 bg-surface-container-highest w-full">
+<div class="bg-secondary h-full" style="width: 45%;"></div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-secondary-container text-on-secondary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">science</span>
+</div>
+<div>
+<h4 class="font-medium text-on-surface">Physics: Mechanics</h4>
+<p class="text-sm text-secondary font-medium flex items-center gap-1">
+                                    Downloading... 45% (405 MB / 900 MB)
+                                </p>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full text-secondary hover:bg-secondary-container/30 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined">pause</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-3 pb-6 z-50 bg-white dark:bg-surface_container_lowest rounded-t-[2rem] shadow-[0_-4px_24px_-2px_rgba(27,109,36,0.08)]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:opacity-80 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] text-[11px] font-semibold mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:opacity-80 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">school</span>
+<span class="font-['Inter'] text-[11px] font-semibold mt-1">Learn</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:opacity-80 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-['Inter'] text-[11px] font-semibold mt-1">Exams</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-100 rounded-full px-5 py-1.5 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined icon-filled">person</span>
+<span class="font-['Inter'] text-[11px] font-semibold mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

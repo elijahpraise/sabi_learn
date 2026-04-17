@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SabiLearn AI Tutor Chat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#191c1b",
+                        "on-error": "#ffffff",
+                        "secondary": "#8b5000",
+                        "surface-container-highest": "#e1e3e1",
+                        "on-secondary-container": "#653900",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d8dad9",
+                        "on-surface": "#191c1b",
+                        "on-primary-fixed": "#002204",
+                        "secondary-container": "#ff9800",
+                        "on-tertiary-fixed-variant": "#004786",
+                        "on-secondary-fixed": "#2c1600",
+                        "surface-tint": "#1b6d24",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#00569f",
+                        "outline": "#707a6c",
+                        "background": "#f8faf8",
+                        "on-error-container": "#93000a",
+                        "surface": "#f8faf8",
+                        "tertiary-fixed-dim": "#a5c8ff",
+                        "on-primary-fixed-variant": "#005312",
+                        "on-primary": "#ffffff",
+                        "primary": "#0d631b",
+                        "surface-container-low": "#f2f4f2",
+                        "tertiary-fixed": "#d4e3ff",
+                        "inverse-surface": "#2e3130",
+                        "primary-fixed": "#a3f69c",
+                        "on-tertiary-container": "#ebf1ff",
+                        "inverse-primary": "#88d982",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#ffb870",
+                        "surface-variant": "#e1e3e1",
+                        "surface-bright": "#f8faf8",
+                        "secondary-fixed": "#ffdcbe",
+                        "on-surface-variant": "#40493d",
+                        "primary-container": "#2e7d32",
+                        "on-tertiary-fixed": "#001c3a",
+                        "primary-fixed-dim": "#88d982",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#006eca",
+                        "outline-variant": "#bfcaba",
+                        "on-primary-container": "#cbffc2",
+                        "surface-container-high": "#e6e9e7",
+                        "inverse-on-surface": "#eff1ef",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#693c00",
+                        "surface-container": "#eceeec"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface h-full flex flex-col antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface_dim/80 backdrop-blur-md no-border tonal-transition shadow-sm shadow-green-900/5 flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center overflow-hidden">
+<img alt="Student Profile" class="w-full h-full object-cover" data-alt="close up portrait of a young male student with a subtle smile in natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsVhTGcEg-V7uoXnXV4-6mJt0Z-O8_HTczwk1NxvzyCei6b9-1OsgNkV6-T4zkvrr-vl80d8b-bCPXyg-ZzoaqgsyE-OvwSTJhqinyRqfEc3QCdknvHSC7u9h7lxEU7MswDNsK8Ol--E_YMLruFkvMcMWl4fd7tmGJ4HGr4s7sUET7OKxr9RoPYVtohv7OUL9GVhMiGjFUf-7CX_bzdTiGFRJC5f5Aj4MG7YR9pxird5Fl9mG77srmEuo-nYGtC61zHgYsi5nqI2cM"/>
+</div>
+<span class="font-['Plus_Jakarta_Sans'] font-extrabold text-xl text-green-800 dark:text-green-200 tracking-tight">SabiLearn</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="text-xs font-medium mr-1 flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary block"></span> Syncing</span>
+<button class="hover:bg-surface_container_low/50 transition-colors active:scale-95 duration-200 p-2 rounded-full flex items-center justify-center text-green-700 dark:text-green-400">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">cloud_off</span>
+</button>
+</div>
+</header>
+<!-- Main Chat Canvas -->
+<main class="flex-1 overflow-y-auto pt-[72px] pb-[160px] md:pb-[140px] px-4 md:px-8 max-w-3xl mx-auto w-full flex flex-col gap-6">
+<!-- Chat Date Divider -->
+<div class="flex justify-center mt-6 mb-2">
+<span class="text-xs text-on-surface-variant/60 font-medium bg-surface-container-low px-3 py-1 rounded-full">Today</span>
+</div>
+<!-- AI Welcome Message -->
+<div class="flex flex-col gap-2 items-start max-w-[85%] md:max-w-[75%]">
+<div class="bg-surface-container-low text-on-surface p-4 rounded-2xl rounded-tl-sm relative group">
+<p class="font-body text-body-lg leading-[1.6]">Hi! I'm Sabi, your AI Tutor. What would you like to learn today? We can dive into a new topic or review your recent progress in Physics.</p>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex flex-col gap-2 items-end self-end max-w-[85%] md:max-w-[75%]">
+<div class="bg-primary text-on-primary p-4 rounded-2xl rounded-tr-sm relative group">
+<p class="font-body text-body-lg leading-[1.6]">Can you explain Newton's Third Law in simple terms?</p>
+</div>
+</div>
+<!-- AI Educational Response -->
+<div class="flex flex-col gap-2 items-start max-w-[90%] md:max-w-[85%]">
+<div class="bg-surface-container-lowest text-on-surface p-5 rounded-2xl rounded-tl-sm shadow-[0_12px_32px_-4px_rgba(27,109,36,0.08)] border border-outline-variant/15">
+<h3 class="font-headline font-bold text-lg mb-3 text-primary">Newton's Third Law of Motion</h3>
+<p class="font-body text-body-lg leading-[1.6] mb-4">Simply put: <strong>For every action, there is an equal and opposite reaction.</strong></p>
+<div class="bg-surface-container-low p-4 rounded-xl mb-4 border-l-4 border-secondary">
+<p class="font-body text-sm leading-[1.6] text-on-surface-variant">
+                        This means that if object A exerts a force on object B, then object B will exert an equal and opposite force on object A. Forces always come in pairs!
+                    </p>
+</div>
+<!-- Action Chips -->
+<div class="flex flex-wrap gap-2 mt-4">
+<button class="bg-surface-container-high hover:bg-surface-dim text-on-surface text-sm font-medium py-1.5 px-3 rounded-full flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[18px]">psychology</span> Simplify
+                    </button>
+<button class="bg-secondary-container/20 text-on-secondary-container hover:bg-secondary-container/30 text-sm font-medium py-1.5 px-3 rounded-full flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[18px]">lightbulb</span> Give examples
+                    </button>
+<button class="bg-tertiary-container/20 text-on-tertiary-container hover:bg-tertiary-container/30 text-sm font-medium py-1.5 px-3 rounded-full flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[18px]">quiz</span> Quiz me
+                    </button>
+</div>
+</div>
+</div>
+<!-- User Message - Triggering Action -->
+<div class="flex flex-col gap-2 items-end self-end max-w-[85%] md:max-w-[75%]">
+<div class="bg-primary text-on-primary p-4 rounded-2xl rounded-tr-sm relative">
+<p class="font-body text-body-lg leading-[1.6]">Give examples</p>
+</div>
+</div>
+<!-- AI Response - Examples -->
+<div class="flex flex-col gap-2 items-start max-w-[90%] md:max-w-[85%]">
+<div class="bg-surface-container-lowest text-on-surface p-5 rounded-2xl rounded-tl-sm shadow-[0_12px_32px_-4px_rgba(27,109,36,0.08)] border border-outline-variant/15">
+<p class="font-body text-body-lg leading-[1.6] mb-4">Here are a few everyday examples of Newton's Third Law in action:</p>
+<ul class="space-y-4">
+<li class="flex gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container/30 flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-primary text-sm">sailing</span>
+</div>
+<div>
+<h4 class="font-headline font-semibold text-base mb-1">Swimming</h4>
+<p class="font-body text-sm text-on-surface-variant leading-[1.5]">When you swim, you push the water backwards (action). The water pushes you forward (reaction) with equal force.</p>
+</div>
+</li>
+<li class="flex gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container/30 flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-secondary text-sm">rocket_launch</span>
+</div>
+<div>
+<h4 class="font-headline font-semibold text-base mb-1">A Rocket Launching</h4>
+<p class="font-body text-sm text-on-surface-variant leading-[1.5]">The rocket pushes exhaust gases downwards out of its engines (action). The gases push the rocket upwards (reaction).</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<!-- Typing Indicator -->
+<div class="flex items-center gap-2 self-start mt-2 ml-2">
+<div class="flex space-x-1">
+<div class="w-2 h-2 bg-on-surface-variant/40 rounded-full"></div>
+<div class="w-2 h-2 bg-on-surface-variant/40 rounded-full"></div>
+<div class="w-2 h-2 bg-on-surface-variant/40 rounded-full"></div>
+</div>
+<span class="text-xs text-on-surface-variant/60 font-medium">Sabi is typing...</span>
+</div>
+</main>
+<!-- Input Area Container (Above Bottom Nav) -->
+<div class="fixed bottom-[88px] md:bottom-0 left-0 w-full bg-surface-container-low/90 backdrop-blur-md pt-3 pb-4 px-4 border-t border-outline-variant/10 z-40">
+<div class="max-w-3xl mx-auto relative flex items-center">
+<button class="absolute left-3 text-on-surface-variant hover:text-primary transition-colors p-2">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+<input class="w-full bg-surface-container-highest border-2 border-transparent focus:border-primary focus:ring-0 rounded-full py-3.5 pl-12 pr-14 text-body-lg text-on-surface placeholder:text-on-surface-variant/60 transition-all outline-none" placeholder="Ask anything..." type="text"/>
+<button class="absolute right-2 bg-primary text-on-primary w-10 h-10 rounded-full flex items-center justify-center hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-3 pb-6 bg-white dark:bg-surface_container_lowest shadow-[0_-4px_24px_-2px_rgba(27,109,36,0.08)] z-50 rounded-t-[2rem] tonal-shift md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:opacity-80 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]">home</span>
+<span class="font-['Inter'] text-[11px] font-semibold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-100 rounded-full px-5 py-1.5 hover:opacity-80 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="font-['Inter'] text-[11px] font-semibold">Learn</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:opacity-80 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]">auto_stories</span>
+<span class="font-['Inter'] text-[11px] font-semibold">Exams</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:opacity-80 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]">person</span>
+<span class="font-['Inter'] text-[11px] font-semibold">Profile</span>
+</a>
+</nav>
+</body></html>
