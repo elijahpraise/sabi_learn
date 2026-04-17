@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SabiLearn Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#191c1b",
+                    "on-error": "#ffffff",
+                    "secondary": "#8b5000",
+                    "surface-container-highest": "#e1e3e1",
+                    "on-secondary-container": "#653900",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#d8dad9",
+                    "on-surface": "#191c1b",
+                    "on-primary-fixed": "#002204",
+                    "secondary-container": "#ff9800",
+                    "on-tertiary-fixed-variant": "#004786",
+                    "on-secondary-fixed": "#2c1600",
+                    "surface-tint": "#1b6d24",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#00569f",
+                    "outline": "#707a6c",
+                    "background": "#f8faf8",
+                    "on-error-container": "#93000a",
+                    "surface": "#f8faf8",
+                    "tertiary-fixed-dim": "#a5c8ff",
+                    "on-primary-fixed-variant": "#005312",
+                    "on-primary": "#ffffff",
+                    "primary": "#0d631b",
+                    "surface-container-low": "#f2f4f2",
+                    "tertiary-fixed": "#d4e3ff",
+                    "inverse-surface": "#2e3130",
+                    "primary-fixed": "#a3f69c",
+                    "on-tertiary-container": "#ebf1ff",
+                    "inverse-primary": "#88d982",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#ffb870",
+                    "surface-variant": "#e1e3e1",
+                    "surface-bright": "#f8faf8",
+                    "secondary-fixed": "#ffdcbe",
+                    "on-surface-variant": "#40493d",
+                    "primary-container": "#2e7d32",
+                    "on-tertiary-fixed": "#001c3a",
+                    "primary-fixed-dim": "#88d982",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-container": "#006eca",
+                    "outline-variant": "#bfcaba",
+                    "on-primary-container": "#cbffc2",
+                    "surface-container-high": "#e6e9e7",
+                    "inverse-on-surface": "#eff1ef",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#693c00",
+                    "surface-container": "#eceeec"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "body": [
+                            "Inter"
+                    ],
+                    "label": [
+                            "Inter"
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: theme('colors.surface');
+            color: theme('colors.on-surface');
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col items-center justify-center bg-surface p-6 sm:p-12">
+<!-- Suppressed TopAppBar and BottomNavBar as this is a transactional Onboarding flow -->
+<main class="w-full max-w-4xl mx-auto flex flex-col md:flex-row gap-12 items-center bg-surface-container-lowest rounded-xl shadow-[0_12px_32px_-4px_rgba(27,109,36,0.08)] p-8 overflow-hidden relative">
+<!-- Decorative Ambient Background Shape -->
+<div class="absolute -top-32 -left-32 w-96 h-96 bg-primary-fixed rounded-full mix-blend-multiply filter blur-3xl opacity-30 z-0 pointer-events-none"></div>
+<div class="absolute -bottom-32 -right-32 w-96 h-96 bg-tertiary-fixed rounded-full mix-blend-multiply filter blur-3xl opacity-30 z-0 pointer-events-none"></div>
+<!-- Left Column: Welcome & Value Prop -->
+<div class="flex-1 flex flex-col gap-8 z-10 w-full">
+<header>
+<div class="flex items-center gap-3 mb-4">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 28px;">school</span>
+</div>
+<h1 class="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight font-headline">SabiLearn</h1>
+</div>
+<h2 class="text-4xl sm:text-5xl font-extrabold leading-tight text-on-surface mb-4 font-headline">Learn anywhere.<br/>Even offline.</h2>
+<p class="text-lg text-on-surface-variant font-body leading-relaxed max-w-md">Download interactive lessons, practice past exams, and track your progress without needing an active internet connection. Your education, uninterrupted.</p>
+</header>
+<!-- Offline Capability Highlight Card -->
+<div class="bg-surface-container-low rounded-DEFAULT p-6 flex gap-4 items-start relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-primary-fixed/20 to-transparent z-0"></div>
+<div class="bg-surface rounded-full p-3 shadow-sm z-10 shrink-0">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">cloud_download</span>
+</div>
+<div class="z-10">
+<h3 class="text-lg font-bold text-on-surface font-headline mb-1">Zero Data Needed Later</h3>
+<p class="text-sm text-on-surface-variant font-body leading-relaxed">Once downloaded, modules are available 100% offline. Save data while mastering your subjects.</p>
+</div>
+</div>
+<!-- Hero Image/Illustration Space -->
+<div class="mt-auto hidden md:block rounded-xl overflow-hidden shadow-sm h-64 bg-surface-container-high relative">
+<img alt="Students studying together" class="absolute inset-0 w-full h-full object-cover" data-alt="A group of diverse university students collaborating over laptops and notebooks in a bright, modern library with large windows and indoor plants, soft natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOtlHSLy_5h3BN4Wy17TuGQTZ6tbQZ2okxtc5fQfLwMH8d65Z_jzfbtiVBqwGIQ_QeYfiTN6FT8tazWngzvzYxQaNQSM_TOOyH8yZdtxtvkPnuLPUYGW1-9_CV_n86Wb5OggW5_hNBwiOQR0j1x1oEOwy-5WxDaHOOqTyYbvQctx60eC81GmRIKwb_U_1S-TRTRWxOv1ChK9DnPOBgL_ozSKttMhuM8c3llZUNRn7Wua7x2SAC81zBcHeu2MZ6r_162vrBBHYQ6PNc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 text-white">
+<p class="font-bold font-headline">Join 50,000+ students</p>
+<p class="text-sm opacity-90 font-body">Mastering their exams with SabiLearn.</p>
+</div>
+</div>
+</div>
+<!-- Right Column: Interactive Setup -->
+<div class="flex-1 w-full bg-surface-container rounded-xl p-6 sm:p-8 flex flex-col gap-8 z-10 border border-outline-variant/15">
+<div>
+<h3 class="text-2xl font-bold text-on-surface font-headline mb-2">Let's set you up</h3>
+<p class="text-on-surface-variant text-sm font-body">Tell us your level to customize your learning path.</p>
+</div>
+<!-- Class Level Selection -->
+<div class="flex flex-col gap-3">
+<label class="text-sm font-bold text-on-surface font-label uppercase tracking-wider">Select Your Level</label>
+<div class="grid grid-cols-3 gap-3">
+<button class="bg-surface-container-lowest border border-outline-variant/15 rounded-DEFAULT py-4 px-2 flex flex-col items-center gap-2 hover:bg-surface-variant transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent active:scale-95 duration-200">
+<span class="text-xl font-bold text-on-surface font-headline">SS 1</span>
+<span class="text-xs text-on-surface-variant font-body">Senior Secondary</span>
+</button>
+<!-- Active State Example -->
+<button class="bg-primary-container text-on-primary-container border-2 border-primary rounded-DEFAULT py-4 px-2 flex flex-col items-center gap-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 active:scale-95 duration-200 relative overflow-hidden">
+<span class="absolute top-2 right-2 material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-xl font-bold font-headline">SS 2</span>
+<span class="text-xs font-body opacity-90">Senior Secondary</span>
+</button>
+<button class="bg-surface-container-lowest border border-outline-variant/15 rounded-DEFAULT py-4 px-2 flex flex-col items-center gap-2 hover:bg-surface-variant transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent active:scale-95 duration-200">
+<span class="text-xl font-bold text-on-surface font-headline">SS 3</span>
+<span class="text-xs text-on-surface-variant font-body">Exam Prep</span>
+</button>
+</div>
+</div>
+<!-- Subject Interest Selection (Bento-ish) -->
+<div class="flex flex-col gap-3">
+<label class="text-sm font-bold text-on-surface font-label uppercase tracking-wider">Core Focus</label>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-surface-container-lowest rounded-DEFAULT p-3 flex items-center gap-3 border border-outline-variant/15 hover:bg-surface-variant cursor-pointer transition-colors">
+<div class="w-8 h-8 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-sm">calculate</span>
+</div>
+<span class="font-semibold text-sm text-on-surface font-body">Mathematics</span>
+</div>
+<div class="bg-surface-container-lowest rounded-DEFAULT p-3 flex items-center gap-3 border border-outline-variant/15 hover:bg-surface-variant cursor-pointer transition-colors">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-sm">science</span>
+</div>
+<span class="font-semibold text-sm text-on-surface font-body">Physics</span>
+</div>
+<div class="bg-surface-container-lowest rounded-DEFAULT p-3 flex items-center gap-3 border border-outline-variant/15 hover:bg-surface-variant cursor-pointer transition-colors">
+<div class="w-8 h-8 rounded-full bg-error-container text-on-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-sm">menu_book</span>
+</div>
+<span class="font-semibold text-sm text-on-surface font-body">English</span>
+</div>
+<div class="bg-surface-container-lowest rounded-DEFAULT p-3 flex items-center gap-3 border border-outline-variant/15 hover:bg-surface-variant cursor-pointer transition-colors">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-sm">biotech</span>
+</div>
+<span class="font-semibold text-sm text-on-surface font-body">Biology</span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="mt-auto flex flex-col gap-4 pt-6 border-t border-outline-variant/15">
+<button class="w-full bg-primary text-on-primary rounded-full py-4 px-6 font-bold font-body text-lg hover:bg-primary/90 transition-colors shadow-sm active:scale-[0.98] duration-200 flex justify-center items-center gap-2">
+                    Start Learning Offline
+                    <span class="material-symbols-outlined text-xl">arrow_forward</span>
+</button>
+<div class="text-center">
+<span class="text-sm text-on-surface-variant font-body">Already have an account?</span>
+<button class="text-sm font-bold text-primary hover:text-primary-container transition-colors ml-1 font-body focus:outline-none focus:underline rounded-DEFAULT">Sign In</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>
