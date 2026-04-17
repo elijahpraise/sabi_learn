@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SabiLearn - Exams Prep</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#191c1b",
+                        "on-error": "#ffffff",
+                        "secondary": "#8b5000",
+                        "surface-container-highest": "#e1e3e1",
+                        "on-secondary-container": "#653900",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d8dad9",
+                        "on-surface": "#191c1b",
+                        "on-primary-fixed": "#002204",
+                        "secondary-container": "#ff9800",
+                        "on-tertiary-fixed-variant": "#004786",
+                        "on-secondary-fixed": "#2c1600",
+                        "surface-tint": "#1b6d24",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#00569f",
+                        "outline": "#707a6c",
+                        "background": "#f8faf8",
+                        "on-error-container": "#93000a",
+                        "surface": "#f8faf8",
+                        "tertiary-fixed-dim": "#a5c8ff",
+                        "on-primary-fixed-variant": "#005312",
+                        "on-primary": "#ffffff",
+                        "primary": "#0d631b",
+                        "surface-container-low": "#f2f4f2",
+                        "tertiary-fixed": "#d4e3ff",
+                        "inverse-surface": "#2e3130",
+                        "primary-fixed": "#a3f69c",
+                        "on-tertiary-container": "#ebf1ff",
+                        "inverse-primary": "#88d982",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#ffb870",
+                        "surface-variant": "#e1e3e1",
+                        "surface-bright": "#f8faf8",
+                        "secondary-fixed": "#ffdcbe",
+                        "on-surface-variant": "#40493d",
+                        "primary-container": "#2e7d32",
+                        "on-tertiary-fixed": "#001c3a",
+                        "primary-fixed-dim": "#88d982",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#006eca",
+                        "outline-variant": "#bfcaba",
+                        "on-primary-container": "#cbffc2",
+                        "surface-container-high": "#e6e9e7",
+                        "inverse-on-surface": "#eff1ef",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#693c00",
+                        "surface-container": "#eceeec"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8faf8; color: #191c1b; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 md:pb-0 md:pt-20">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm shadow-green-900/5 hidden md:flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-lg">
+                SP
+            </div>
+<span class="text-xl font-extrabold text-green-800 tracking-tight font-headline">SabiLearn</span>
+</div>
+<nav class="flex gap-8">
+<a class="text-on-surface-variant font-body font-medium hover:bg-surface-container-low/50 px-4 py-2 rounded-full transition-colors" href="#">Home</a>
+<a class="text-on-surface-variant font-body font-medium hover:bg-surface-container-low/50 px-4 py-2 rounded-full transition-colors" href="#">Learn</a>
+<a class="text-green-700 font-body font-bold bg-green-100/50 px-4 py-2 rounded-full transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-sm">auto_stories</span>
+                Exams
+            </a>
+<a class="text-on-surface-variant font-body font-medium hover:bg-surface-container-low/50 px-4 py-2 rounded-full transition-colors" href="#">Profile</a>
+</nav>
+<button class="text-green-700 hover:bg-surface-container-low/50 p-2 rounded-full transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined">cloud_off</span>
+</button>
+</header>
+<!-- Mobile Header Fallback -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm shadow-green-900/5 md:hidden flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-sm">
+                SP
+            </div>
+<span class="text-lg font-extrabold text-green-800 tracking-tight font-headline">SabiLearn</span>
+</div>
+<button class="text-green-700 p-2">
+<span class="material-symbols-outlined">cloud_off</span>
+</button>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 md:pt-8 space-y-12">
+<!-- Hero Section -->
+<section class="relative rounded-lg overflow-hidden bg-surface-container-lowest p-8 md:p-12 shadow-[0_12px_32px_-4px_rgba(27,109,36,0.08)]">
+<div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary/10 to-primary-container/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"></div>
+<div class="relative z-10 max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 bg-secondary-container/20 text-on-secondary-container rounded-full text-sm font-semibold mb-6">
+<span class="material-symbols-outlined text-base">campaign</span>
+                    JAMB 2024 Prep is Live!
+                </div>
+<h1 class="text-4xl md:text-5xl font-headline font-extrabold text-on-surface leading-tight mb-4">
+                    Master Your Exams with <span class="text-primary">Precision.</span>
+</h1>
+<p class="text-lg text-on-surface-variant font-body mb-8 leading-relaxed">
+                    Practice with authentic past questions, simulate real exam conditions, and track your readiness for WAEC, JAMB, and NECO.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-3.5 rounded-full font-bold text-lg hover:opacity-90 transition-opacity flex items-center gap-2 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                        Start Quick Mock
+                    </button>
+<button class="bg-surface-container text-primary px-8 py-3.5 rounded-full font-bold text-lg hover:bg-surface-container-high transition-colors">
+                        View Study Plan
+                    </button>
+</div>
+</div>
+</section>
+<!-- Categories Bento Grid -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-2xl font-headline font-bold text-on-surface">Exam Categories</h2>
+<button class="text-primary font-semibold text-sm hover:underline">View All</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- JAMB Card -->
+<div class="group relative bg-surface-container-lowest rounded-DEFAULT p-6 shadow-[0_4px_24px_-4px_rgba(27,109,36,0.05)] hover:shadow-[0_12px_32px_-4px_rgba(27,109,36,0.12)] transition-shadow cursor-pointer overflow-hidden">
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors"></div>
+<div class="flex items-start justify-between mb-12 relative z-10">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">school</span>
+</div>
+<span class="bg-green-100 text-green-800 text-xs font-bold px-2.5 py-1 rounded-full">Most Popular</span>
+</div>
+<div class="relative z-10">
+<h3 class="text-xl font-headline font-bold text-on-surface mb-2">JAMB UTME</h3>
+<p class="text-on-surface-variant text-sm mb-4">15 Years Past Questions • CBT Simulator</p>
+<div class="flex gap-2">
+<span class="text-xs bg-surface-container px-2 py-1 rounded-md text-on-surface-variant font-medium">Science</span>
+<span class="text-xs bg-surface-container px-2 py-1 rounded-md text-on-surface-variant font-medium">Art</span>
+<span class="text-xs bg-surface-container px-2 py-1 rounded-md text-on-surface-variant font-medium">Commercial</span>
+</div>
+</div>
+</div>
+<!-- WAEC Card -->
+<div class="group relative bg-surface-container-lowest rounded-DEFAULT p-6 shadow-[0_4px_24px_-4px_rgba(27,109,36,0.05)] hover:shadow-[0_12px_32px_-4px_rgba(27,109,36,0.12)] transition-shadow cursor-pointer overflow-hidden">
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-tertiary/5 rounded-full blur-2xl group-hover:bg-tertiary/10 transition-colors"></div>
+<div class="flex items-start justify-between mb-12 relative z-10">
+<div class="w-12 h-12 bg-tertiary-container text-on-tertiary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">menu_book</span>
+</div>
+</div>
+<div class="relative z-10">
+<h3 class="text-xl font-headline font-bold text-on-surface mb-2">WAEC / WASSCE</h3>
+<p class="text-on-surface-variant text-sm mb-4">Objective &amp; Theory • Step-by-step Solutions</p>
+<div class="flex gap-2">
+<span class="text-xs bg-surface-container px-2 py-1 rounded-md text-on-surface-variant font-medium">SSCE</span>
+<span class="text-xs bg-surface-container px-2 py-1 rounded-md text-on-surface-variant font-medium">GCE</span>
+</div>
+</div>
+</div>
+<!-- Practice by Topic -->
+<div class="group relative bg-surface-container-lowest rounded-DEFAULT p-6 shadow-[0_4px_24px_-4px_rgba(27,109,36,0.05)] hover:shadow-[0_12px_32px_-4px_rgba(27,109,36,0.12)] transition-shadow cursor-pointer overflow-hidden border border-outline-variant/30">
+<div class="flex items-start justify-between mb-8 relative z-10">
+<div class="w-12 h-12 bg-surface-container text-on-surface-variant rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">category</span>
+</div>
+</div>
+<div class="relative z-10">
+<h3 class="text-xl font-headline font-bold text-on-surface mb-2">Practice by Topic</h3>
+<p class="text-on-surface-variant text-sm mb-6">Target specific weak areas across subjects.</p>
+<button class="w-full py-2.5 text-center text-primary font-bold border-2 border-primary/20 rounded-full hover:bg-primary/5 transition-colors">
+                            Select Topic
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Ongoing/Recent Activity -->
+<section class="bg-surface-container-low rounded-lg p-6 md:p-8">
+<h2 class="text-xl font-headline font-bold text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+                Recent Activity
+            </h2>
+<div class="bg-surface-container-lowest rounded-DEFAULT p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-sm border border-outline-variant/20">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-error-container text-on-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">timer</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">JAMB Physics 2022 - Mock</h4>
+<p class="text-sm text-on-surface-variant mt-0.5">Paused • 45 mins remaining • 20/50 answered</p>
+</div>
+</div>
+<div class="flex items-center gap-4 w-full md:w-auto">
+<div class="w-full md:w-32 h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 40%;"></div>
+</div>
+<button class="bg-primary text-on-primary px-5 py-2 rounded-full font-semibold text-sm shrink-0 hover:bg-primary/90 transition-colors">
+                        Resume
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-3 pb-6 bg-white dark:bg-surface_container_lowest z-50 rounded-t-[2rem] shadow-[0_-4px_24px_-2px_rgba(27,109,36,0.08)] tonal-shift bg-surface_container_low">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:opacity-80 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-['Inter'] text-[11px] font-semibold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:opacity-80 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1">school</span>
+<span class="font-['Inter'] text-[11px] font-semibold">Learn</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-100 rounded-full px-5 py-1.5 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1 text-green-700 dark:text-green-400" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span class="font-['Inter'] text-[11px] font-semibold text-green-700 dark:text-green-400">Exams</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:opacity-80 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-['Inter'] text-[11px] font-semibold">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SabiLearn - Quadratic Equations</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-background": "#191c1b",
+                        "on-error": "#ffffff",
+                        "secondary": "#8b5000",
+                        "surface-container-highest": "#e1e3e1",
+                        "on-secondary-container": "#653900",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d8dad9",
+                        "on-surface": "#191c1b",
+                        "on-primary-fixed": "#002204",
+                        "secondary-container": "#ff9800",
+                        "on-tertiary-fixed-variant": "#004786",
+                        "on-secondary-fixed": "#2c1600",
+                        "surface-tint": "#1b6d24",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#00569f",
+                        "outline": "#707a6c",
+                        "background": "#f8faf8",
+                        "on-error-container": "#93000a",
+                        "surface": "#f8faf8",
+                        "tertiary-fixed-dim": "#a5c8ff",
+                        "on-primary-fixed-variant": "#005312",
+                        "on-primary": "#ffffff",
+                        "primary": "#0d631b",
+                        "surface-container-low": "#f2f4f2",
+                        "tertiary-fixed": "#d4e3ff",
+                        "inverse-surface": "#2e3130",
+                        "primary-fixed": "#a3f69c",
+                        "on-tertiary-container": "#ebf1ff",
+                        "inverse-primary": "#88d982",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#ffb870",
+                        "surface-variant": "#e1e3e1",
+                        "surface-bright": "#f8faf8",
+                        "secondary-fixed": "#ffdcbe",
+                        "on-surface-variant": "#40493d",
+                        "primary-container": "#2e7d32",
+                        "on-tertiary-fixed": "#001c3a",
+                        "primary-fixed-dim": "#88d982",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#006eca",
+                        "outline-variant": "#bfcaba",
+                        "on-primary-container": "#cbffc2",
+                        "surface-container-high": "#e6e9e7",
+                        "inverse-on-surface": "#eff1ef",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#693c00",
+                        "surface-container": "#eceeec"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body antialiased min-h-screen pb-24 md:pb-0 pt-20">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface_dim/80 backdrop-blur-md shadow-sm shadow-green-900/5">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-headline font-bold">
+                    SP
+                </div>
+<h1 class="text-xl font-extrabold text-green-800 dark:text-green-200 tracking-tight font-headline">SabiLearn</h1>
+</div>
+<!-- Web Nav (Hidden on Mobile) -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:bg-surface_container_low/50 transition-colors px-3 py-2 rounded-DEFAULT font-label font-semibold text-sm flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[20px]">home</span>
+                    Home
+                </a>
+<a class="text-green-700 dark:text-green-400 hover:bg-surface_container_low/50 transition-colors px-3 py-2 rounded-DEFAULT font-label font-semibold text-sm flex items-center gap-2 relative" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">school</span>
+                    Learn
+                    <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-primary rounded-full"></div>
+</a>
+<a class="text-on-surface-variant hover:bg-surface_container_low/50 transition-colors px-3 py-2 rounded-DEFAULT font-label font-semibold text-sm flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[20px]">auto_stories</span>
+                    Exams
+                </a>
+<a class="text-on-surface-variant hover:bg-surface_container_low/50 transition-colors px-3 py-2 rounded-DEFAULT font-label font-semibold text-sm flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[20px]">person</span>
+                    Profile
+                </a>
+</nav>
+<button aria-label="Offline Mode Active" class="text-green-700 dark:text-green-400 hover:bg-surface_container_low/50 transition-colors p-2 rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined">cloud_off</span>
+</button>
+</div>
+</header>
+<main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+<!-- Hero Section -->
+<div class="mb-12">
+<div class="flex items-center gap-2 text-sm text-on-surface-variant mb-4 font-label">
+<span>Algebra</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="font-semibold text-primary">Equations</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-6">
+<div>
+<h2 class="text-4xl md:text-5xl font-headline font-extrabold text-on-background mb-4 leading-tight">
+                        Quadratic Equations
+                    </h2>
+<p class="text-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                        Master the fundamentals of second-degree polynomial equations. Learn to solve using factoring, completing the square, and the quadratic formula.
+                    </p>
+</div>
+<div class="flex gap-3 shrink-0">
+<div class="inline-flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full text-sm font-medium text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">download_done</span>
+                        Available Offline
+                    </div>
+</div>
+</div>
+</div>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Content Canvas -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Definition Card -->
+<section class="bg-surface-container-lowest rounded-lg p-6 md:p-8 shadow-[0_12px_32px_-4px_rgba(27,109,36,0.04)]">
+<h3 class="text-2xl font-headline font-bold mb-4 text-on-background flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">book_4</span>
+                        Definition
+                    </h3>
+<div class="prose prose-lg text-on-surface-variant leading-relaxed">
+<p>
+                            A quadratic equation is a second-order polynomial equation in a single variable <em>x</em>, with standard form:
+                        </p>
+<div class="bg-surface-container-low p-6 rounded-DEFAULT my-6 text-center text-xl font-headline font-bold text-on-background tracking-wide">
+                            ax² + bx + c = 0
+                        </div>
+<p>
+                            Where <em>x</em> represents an unknown, and <em>a</em>, <em>b</em>, and <em>c</em> represent known numbers, where <em>a</em> ≠ 0.
+                        </p>
+</div>
+</section>
+<!-- Methods Section (Bento style) -->
+<section>
+<h3 class="text-2xl font-headline font-bold mb-6 text-on-background px-2">Solving Methods</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Method 1 -->
+<div class="bg-surface-container-low rounded-lg p-6 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
+<div class="relative z-10">
+<div class="w-12 h-12 bg-surface-container-lowest rounded-full flex items-center justify-center mb-4 text-primary shadow-sm">
+<span class="material-symbols-outlined">calculate</span>
+</div>
+<h4 class="font-headline font-bold text-lg mb-2 text-on-background">Factoring</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-4">
+                                    Finding two numbers that multiply to 'ac' and add to 'b'. Best for simple equations.
+                                </p>
+<button class="text-primary font-semibold text-sm flex items-center gap-1 hover:text-primary-container transition-colors">
+                                    View Examples <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Method 2 -->
+<div class="bg-surface-container-low rounded-lg p-6 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-tertiary/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
+<div class="relative z-10">
+<div class="w-12 h-12 bg-surface-container-lowest rounded-full flex items-center justify-center mb-4 text-tertiary shadow-sm">
+<span class="material-symbols-outlined">functions</span>
+</div>
+<h4 class="font-headline font-bold text-lg mb-2 text-on-background">Quadratic Formula</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-4">
+                                    The universal method using x = [-b ± √(b² - 4ac)] / 2a. Works for every quadratic equation.
+                                </p>
+<button class="text-tertiary font-semibold text-sm flex items-center gap-1 hover:text-tertiary-container transition-colors">
+                                    View Formula <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Deep Dive / Expandable -->
+<section class="bg-surface-container-lowest rounded-lg shadow-[0_12px_32px_-4px_rgba(27,109,36,0.04)] overflow-hidden">
+<div class="p-6 md:p-8 border-b border-surface-container-highest/30">
+<div class="flex justify-between items-center cursor-pointer">
+<h3 class="text-xl font-headline font-bold text-on-background flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-2xl">insights</span>
+                                Understanding the Discriminant
+                            </h3>
+<span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<!-- Normally hidden, showing for design representation -->
+<div class="p-6 md:p-8 bg-surface-bright">
+<p class="text-on-surface-variant leading-relaxed mb-4">
+                            The part of the formula under the square root (b² - 4ac) is called the discriminant. It tells you the nature of the roots.
+                        </p>
+<ul class="space-y-3 text-sm text-on-surface-variant">
+<li class="flex items-start gap-3">
+<div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div>
+<span><strong>Positive (&gt;0):</strong> Two distinct real roots. The parabola crosses the x-axis twice.</span>
+</li>
+<li class="flex items-start gap-3">
+<div class="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0"></div>
+<span><strong>Zero (=0):</strong> One real root (repeated). The parabola touches the x-axis exactly once.</span>
+</li>
+<li class="flex items-start gap-3">
+<div class="w-1.5 h-1.5 rounded-full bg-tertiary mt-2 shrink-0"></div>
+<span><strong>Negative (&lt;0):</strong> No real roots (complex roots). The parabola never touches the x-axis.</span>
+</li>
+</ul>
+</div>
+</section>
+</div>
+<!-- Right Column: Actions & Context -->
+<div class="lg:col-span-4 space-y-6">
+<!-- Action Card -->
+<div class="bg-gradient-to-br from-primary to-primary-container rounded-lg p-6 text-on-primary shadow-[0_12px_32px_-4px_rgba(27,109,36,0.2)]">
+<h4 class="font-headline font-bold text-xl mb-2">Ready to test your knowledge?</h4>
+<p class="text-primary-fixed-dim text-sm mb-6">Take a quick 5-question quiz to solidify these concepts.</p>
+<button class="w-full bg-surface-container-lowest text-primary font-bold py-3 px-6 rounded-full hover:bg-surface-bright transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+                        Take Quiz
+                    </button>
+</div>
+<!-- Ask AI Card -->
+<div class="bg-surface-container-lowest rounded-lg p-6 shadow-[0_12px_32px_-4px_rgba(27,109,36,0.04)] border border-outline-variant/15">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">smart_toy</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-background">Ask Sabi AI</h4>
+<p class="text-xs text-on-surface-variant">Stuck on a concept?</p>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-DEFAULT p-3 flex items-center gap-2">
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full text-on-background placeholder:text-on-surface-variant/50" placeholder="E.g. What if 'a' is negative?" type="text"/>
+<button class="text-primary hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+<!-- Related Topics -->
+<div class="bg-surface-container-lowest rounded-lg p-6 shadow-[0_12px_32px_-4px_rgba(27,109,36,0.04)]">
+<h4 class="font-headline font-bold text-on-background mb-4">Next in Algebra</h4>
+<div class="space-y-3">
+<a class="block p-3 rounded-DEFAULT hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex justify-between items-center">
+<span class="font-medium text-sm text-on-surface-variant group-hover:text-on-background">Graphing Parabolas</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant/50 group-hover:text-primary">arrow_forward</span>
+</div>
+</a>
+<a class="block p-3 rounded-DEFAULT hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex justify-between items-center">
+<span class="font-medium text-sm text-on-surface-variant group-hover:text-on-background">Polynomial Inequalities</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant/50 group-hover:text-primary">arrow_forward</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Visible on Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-[2rem] bg-white dark:bg-surface_container_lowest shadow-[0_-4px_24px_-2px_rgba(27,109,36,0.08)]">
+<div class="flex justify-around items-center px-4 pt-3 pb-6 w-full">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:opacity-80 active:scale-90 transition-transform duration-200 gap-1 w-16" href="#">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="font-['Inter'] text-[11px] font-semibold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-100 rounded-full px-5 py-1.5 active:scale-90 transition-transform duration-200 gap-1" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="font-['Inter'] text-[11px] font-semibold">Learn</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:opacity-80 active:scale-90 transition-transform duration-200 gap-1 w-16" href="#">
+<span class="material-symbols-outlined text-[24px]">auto_stories</span>
+<span class="font-['Inter'] text-[11px] font-semibold">Exams</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:opacity-80 active:scale-90 transition-transform duration-200 gap-1 w-16" href="#">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="font-['Inter'] text-[11px] font-semibold">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

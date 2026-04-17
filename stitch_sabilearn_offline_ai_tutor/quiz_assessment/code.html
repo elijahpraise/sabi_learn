@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SabiLearn - Quiz</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#191c1b",
+                      "on-error": "#ffffff",
+                      "secondary": "#8b5000",
+                      "surface-container-highest": "#e1e3e1",
+                      "on-secondary-container": "#653900",
+                      "on-tertiary": "#ffffff",
+                      "surface-dim": "#d8dad9",
+                      "on-surface": "#191c1b",
+                      "on-primary-fixed": "#002204",
+                      "secondary-container": "#ff9800",
+                      "on-tertiary-fixed-variant": "#004786",
+                      "on-secondary-fixed": "#2c1600",
+                      "surface-tint": "#1b6d24",
+                      "on-secondary": "#ffffff",
+                      "tertiary": "#00569f",
+                      "outline": "#707a6c",
+                      "background": "#f8faf8",
+                      "on-error-container": "#93000a",
+                      "surface": "#f8faf8",
+                      "tertiary-fixed-dim": "#a5c8ff",
+                      "on-primary-fixed-variant": "#005312",
+                      "on-primary": "#ffffff",
+                      "primary": "#0d631b",
+                      "surface-container-low": "#f2f4f2",
+                      "tertiary-fixed": "#d4e3ff",
+                      "inverse-surface": "#2e3130",
+                      "primary-fixed": "#a3f69c",
+                      "on-tertiary-container": "#ebf1ff",
+                      "inverse-primary": "#88d982",
+                      "error": "#ba1a1a",
+                      "secondary-fixed-dim": "#ffb870",
+                      "surface-variant": "#e1e3e1",
+                      "surface-bright": "#f8faf8",
+                      "secondary-fixed": "#ffdcbe",
+                      "on-surface-variant": "#40493d",
+                      "primary-container": "#2e7d32",
+                      "on-tertiary-fixed": "#001c3a",
+                      "primary-fixed-dim": "#88d982",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-container": "#006eca",
+                      "outline-variant": "#bfcaba",
+                      "on-primary-container": "#cbffc2",
+                      "surface-container-high": "#e6e9e7",
+                      "inverse-on-surface": "#eff1ef",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed-variant": "#693c00",
+                      "surface-container": "#eceeec"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {},
+              "fontFamily": {
+                      "headline": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body": [
+                              "Inter"
+                      ],
+                      "label": [
+                              "Inter"
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen flex flex-col relative pb-24 md:pb-0 pt-[72px]">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md shadow-sm shadow-green-900/5">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="close">close</span>
+<span class="text-xl font-extrabold text-green-800 dark:text-green-200 tracking-tight font-headline">SabiLearn</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="more_vert">more_vert</span>
+</div>
+</div>
+<!-- Progress Bar (Injected here for context) -->
+<div class="w-full h-1.5 bg-surface-container-highest">
+<div class="h-full bg-gradient-to-r from-primary-fixed to-primary rounded-r-full w-[30%]"></div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col items-center justify-center p-6 md:p-12 w-full max-w-4xl mx-auto">
+<!-- Context / Meta -->
+<div class="w-full mb-8 flex justify-between items-center">
+<span class="font-label text-sm font-semibold text-on-surface-variant uppercase tracking-wider">Question 3 of 10</span>
+<div class="flex items-center gap-1 text-secondary font-semibold text-sm">
+<span class="material-symbols-outlined text-sm" data-icon="timer">timer</span>
+<span>04:12</span>
+</div>
+</div>
+<!-- Question Section -->
+<section class="w-full bg-surface-container-lowest rounded-lg p-8 md:p-12 shadow-[0_12px_32px_-4px_rgba(27,109,36,0.08)] mb-12 relative overflow-hidden">
+<!-- Subtle accent gradient -->
+<div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-primary-container"></div>
+<h1 class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-tight mb-8">
+                In JavaScript, which of the following is a way to declare a variable that cannot be reassigned?
+            </h1>
+<!-- Options (Bento-style grid for md+) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Option A: Unselected -->
+<button class="w-full text-left p-6 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container transition-colors outline outline-1 outline-outline-variant/15 flex items-start gap-4 group focus:outline-primary focus:outline-2 focus:outline-offset-0">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-surface text-on-surface-variant flex items-center justify-center font-headline font-bold text-sm shadow-sm group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">A</div>
+<span class="font-body text-lg text-on-surface mt-0.5">var</span>
+</button>
+<!-- Option B: Correct Answer Selection (Showing Post-Interaction State) -->
+<button class="w-full text-left p-6 rounded-DEFAULT bg-primary-fixed text-on-primary-fixed-variant outline outline-2 outline-primary flex items-start gap-4 relative overflow-hidden shadow-sm">
+<div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline font-bold text-sm shadow-sm z-10">
+<span class="material-symbols-outlined text-sm" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body text-lg font-semibold mt-0.5 z-10">const</span>
+</button>
+<!-- Option C: Unselected -->
+<button class="w-full text-left p-6 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container transition-colors outline outline-1 outline-outline-variant/15 flex items-start gap-4 group focus:outline-primary focus:outline-2 focus:outline-offset-0">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-surface text-on-surface-variant flex items-center justify-center font-headline font-bold text-sm shadow-sm group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">C</div>
+<span class="font-body text-lg text-on-surface mt-0.5">let</span>
+</button>
+<!-- Option D: Unselected -->
+<button class="w-full text-left p-6 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container transition-colors outline outline-1 outline-outline-variant/15 flex items-start gap-4 group focus:outline-primary focus:outline-2 focus:outline-offset-0">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-surface text-on-surface-variant flex items-center justify-center font-headline font-bold text-sm shadow-sm group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">D</div>
+<span class="font-body text-lg text-on-surface mt-0.5">static</span>
+</button>
+</div>
+<!-- Instant Feedback Panel -->
+<div class="mt-8 p-6 bg-surface-container rounded-DEFAULT flex gap-4 items-start">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="lightbulb" data-weight="fill" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-xl text-on-surface mb-2">Spot on!</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">
+                        The <code class="bg-surface px-1.5 py-0.5 rounded text-sm font-mono text-tertiary">const</code> keyword declares a block-scoped local variable, preventing reassignment. Great job remembering the nuances of ES6 variable declarations! Keep the momentum going!
+                    </p>
+</div>
+</div>
+</section>
+<!-- Bottom Action -->
+<div class="w-full flex justify-end">
+<button class="bg-primary hover:bg-primary-container text-on-primary font-headline font-bold text-lg px-8 py-4 rounded-full shadow-[0_12px_32px_-4px_rgba(27,109,36,0.2)] flex items-center gap-2 active:scale-95 transition-transform">
+                Next Question
+                <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Suppressed Bottom Navigation for focused task (Quiz) -->
+</body></html>
